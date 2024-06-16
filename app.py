@@ -2,6 +2,7 @@ from flask import Flask, request
 import sqlite3
 import json
 from dotenv import load_dotenv
+import os
 
 load_dotenv()
 
