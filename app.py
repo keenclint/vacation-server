@@ -1,8 +1,12 @@
 from flask import Flask, request
 import sqlite3
 import json
-app = Flask(__name__)
+from dotenv import load_dotenv
 
+load_dotenv()
+
+app = Flask(__name__)
+port = os.getenv('PORT')
 
 
 @app.route("/get/data", methods=("GET","POST"))
@@ -41,4 +45,4 @@ def apply():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8088, debug=True)
+    app.run(host='0.0.0.0', port=port, debug=True)
