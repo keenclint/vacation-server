@@ -37,3 +37,8 @@ def apply():
         # has_courses = response.fetchone()
         connection.close()
         return {"status":"success", "message":"data submitted successfully"}
+
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8088, debug=True)
