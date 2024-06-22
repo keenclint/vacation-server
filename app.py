@@ -12,7 +12,7 @@ CORS(app)
 port = os.getenv('PORT')
 
 
-flask_cors.cross_origin( 
+cross_origin( 
 origins = '*',  
 methods = ['GET', 'HEAD', 'POST', 'OPTIONS', 'PUT'],  
 headers = None,  
