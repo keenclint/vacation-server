@@ -3,11 +3,25 @@ import sqlite3
 import json
 from dotenv import load_dotenv
 import os
+from flask_cors import CORS 
 
 load_dotenv()
 
 app = Flask(__name__)
+CORS(app)
 port = os.getenv('PORT')
+
+
+flask_cors.cross_origin( 
+origins = '*',  
+methods = ['GET', 'HEAD', 'POST', 'OPTIONS', 'PUT'],  
+headers = None,  
+supports_credentials = False,  
+max_age = None,  
+send_wildcard = True,  
+always_send = True,  
+automatic_options = False
+)
 
 
 @app.route("/get/data", methods=("GET","POST"))
@@ -22,6 +36,7 @@ def login():
 
 
 @app.route('/post/data',methods=['GET','POST'])
+@cross_origin()
 def apply():
     if request.method == "POST":
         data = json.loads(request.data)
