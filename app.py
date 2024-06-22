@@ -3,7 +3,7 @@ import sqlite3
 import json
 from dotenv import load_dotenv
 import os
-from flask_cors import CORS 
+from flask_cors import CORS, cross_origin
 
 load_dotenv()
 
